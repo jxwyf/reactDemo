@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Component } from 'react';
+import reactDom from 'react-dom';
+import { Layout } from 'antd';
+import 'antd/dist/antd.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import AppHead from './components/Header/index';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import './style.css';
+
+const { Header, Footer, Content } = Layout;
+
+class App extends Component {
+
+    render() {
+        return (
+            <Layout style={{ minWidth: 1300 }}>
+                <Header className="header"><AppHead/></Header>
+                <Content className="content">Content</Content>
+                <Footer className="footer">Footer</Footer>
+            </Layout>
+        )
+    }
+
+}
+
+reactDom.render(<App />, document.getElementById('root'))
