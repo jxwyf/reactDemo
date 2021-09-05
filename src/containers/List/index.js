@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { List } from 'antd';
+import { Link } from 'react-router-dom';
 
 
 
@@ -31,7 +32,12 @@ class PageList extends Component{
         style={{background: '#fff'}}
        
         dataSource={this.state.data}
-        renderItem={item => <List.Item>{item.title}</List.Item>}
+        renderItem={item => <List.Item>
+            <Link to={`/detail/${item.id}`}>
+            {item.title}
+            </Link>
+            </List.Item>}
+
       />
       )
     }
