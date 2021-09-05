@@ -85,7 +85,7 @@ class Login extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://www.dell-lee.com/react/api/isLogin.json').then(res=>{
+        axios.get('http://www.dell-lee.com/react/api/isLogin.json',{withCredentials: true}).then(res=>{
             const login = res.data.data.login;
             this.setState({
                 login:login
