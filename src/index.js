@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import reactDom from 'react-dom';
 import { Layout } from 'antd';
 import 'antd/dist/antd.css';
@@ -16,18 +16,20 @@ class App extends Component {
 
     render() {
         return (
-            <Layout style={{ minWidth: 1300 }}>
+            <BrowserRouter>
+            <Layout style={{ minWidth: 1300, height:"100%" }}>
                 <Header className="header"><AppHead/></Header>
                 <Content className="content">
-                    <BrowserRouter>
+                    
                     <Switch>
                     <Route path='/detail' component={Detail} />
-                    <Route path='/' component={List} />  
+                    <Route path='/:id?' component={List} />  
                     </Switch>
-                    </BrowserRouter>
+                    
                 </Content>
-                <Footer className="footer">Footer</Footer>
+                <Footer className="footer">@copyright 刘唯卿 2021</Footer>
             </Layout>
+            </BrowserRouter>
         )
     }
 

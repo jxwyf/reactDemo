@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Menu } from 'antd';
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import logo from './logo.png';
@@ -19,7 +20,9 @@ class AppHead extends Component {
          return this.state.list.map(item =>{
              return(
                  <Menu.Item key={item.id}>
+                     <Link to={`/${item.id}`}>
                      {item.title}
+                    </Link>
                  </Menu.Item>
              )
          })
